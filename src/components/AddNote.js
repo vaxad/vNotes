@@ -4,13 +4,12 @@ import noteContext from "../context/notes/noteContext";
 const AddNote = (props) => {
   const context = useContext(noteContext);
   const { addNote } = context;
-  const [note, setNote]=useState({title:"", description:"", tag:"General"})
+  const [note, setNote]=useState({title:"", description:"", tag:""})
   const handleAdd = async(e) => {
     e.preventDefault();
-    await addNote(note.title,note.description,note.tag);
+    await addNote(note.title,note.description,note.tag===""?"General":note.tag);
     props.showAlert("Note Added", "success");
-    id_title.value="",id_description.value="",id_tag.value="";
-    setNote({title:"", description:"", tag:"General"});
+    setNote({title:"", description:"", tag:""});
   };
 
 
@@ -30,6 +29,7 @@ const AddNote = (props) => {
               className="form-control my-1"
               id="id_title"
               name="title"
+              value={note.title}
               aria-describedby="emailHelp"
               placeholder="Enter title"
               onChange={onChange}
@@ -41,6 +41,7 @@ const AddNote = (props) => {
             <input
               type="text"
               name="description"
+              value={note.description}
               className="form-control my-1"
               id="id_description"
               placeholder="Description"
@@ -53,6 +54,7 @@ const AddNote = (props) => {
             <input
               type="text"
               name="tag"
+              value={note.tag}
               className="form-control my-1"
               id="id_tag"
               placeholder="Tag"
