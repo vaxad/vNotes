@@ -13,7 +13,8 @@ const Notes = (props) => {
     }else{
       navigate('/login');
     }
-  },[]);
+    
+  },[getNotes, navigate]);
 
   const ref =useRef(null)
   const [note, setNote]=useState({id:"",title:"", description:"", tag:"General"})

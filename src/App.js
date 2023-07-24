@@ -4,10 +4,7 @@ import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Route
 } from "react-router-dom";
 
 import Navbar from './components/Navbar';
