@@ -32,7 +32,7 @@ const Navbar = () => {
       <form className="d-flex w-100" role="search">
         <input className="form-control w-90" type="search" placeholder="Search" aria-label="Search" />
         {/* <button className="btn btn-outline-light mx-2" type="submit">Search</button> */}
-        <i class="fa-solid fa-magnifying-glass fa-2x mx-1" style={{color: "#ffffff"}}></i>
+        <i className="fa-solid fa-magnifying-glass fa-2x mx-1" style={{color: "#ffffff"}}></i>
       </form>
       
       {!localStorage.getItem('token')?<div className="dropdown mx-2">
